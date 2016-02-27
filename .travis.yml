@@ -14,7 +14,8 @@ before_install:
 
 install:
   # Install ansible
-  - pip install ansible python-apt
+  - pip install python-distutils-extra
+  - pip install ansible python-apt || true
 
   # Check ansible version
   - ansible --version
