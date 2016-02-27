@@ -1,0 +1,2 @@
+ - include: relaymail.yml
+   tags: relaymail

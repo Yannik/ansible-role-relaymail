@@ -1,0 +1,7 @@
+# force the from address to be the {{ relaymail_smtp_user }}
+relaymail_force_from_address: true
+
+# "all" overwrites the to addresses for all users
+# "local" overwrites the to address for emails addressed to local users
+# "none" 
+relaymail_overwrite_to: all

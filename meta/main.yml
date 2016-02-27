@@ -1,0 +1,35 @@
+galaxy_info:
+  author: Yannik Sembritzki
+  description: This role setups up a host so that it sends outgoing mails over a smarthost.
+  
+  license: GPLv2
+  
+  min_ansible_version: 2.0
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - quantal
+    - raring
+    - saucy
+    - trusty
+    - utopic
+    - vivid
+    - wily
+    - xenial
+  - name: Debian
+    versions:
+    - jessie
+    - lenny
+    - squeeze
+    - wheezy
+  
+  galaxy_tags: 
+    - mail
+    - smtp
+    - relay
+    - outgoing
+    - relayhost
+    - smarthost
+    - mailrelay
