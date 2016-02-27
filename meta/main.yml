@@ -1,6 +1,6 @@
 galaxy_info:
   author: Yannik Sembritzki
-  description: This role setups up a host so that it sends outgoing mails over a smarthost.
+  description: This role setups up a host so that it sends outgoing mails over a smarthost and optionally forwards email addressed to local system users.
   
   license: GPLv2
   

@@ -3,7 +3,7 @@ Description
 
 [![Build Status](https://travis-ci.org/Yannik/ansible-role-relaymail.svg?branch=master)](https://travis-ci.org/Yannik/ansible-role-relaymail)
 
-This role setups up a host so that it sends outgoing mails over a smarthost.
+This role setups up a host so that it sends outgoing mails over a smarthost and optionally forwards email addressed to local system users.
 
 Requirements
 ------------
