@@ -12,6 +12,7 @@ before_install:
  - sudo apt-get install python-apt python-pycurl
  - sudo dpkg -l |grep python
  - sudo dpkg -l |grep apt
+ - sudo cat /etc/issue
 
 install:
   # Install ansible
