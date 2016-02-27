@@ -2,12 +2,14 @@
 language: python
 python: "2.7"
 
-# Install ansible
 addons:
   apt:
     packages:
     - python-pip
-    - python-apt
+
+before_install:
+ - sudo apt-get update -qq
+ - sudo apt-get install -qq python-apt
 
 install:
   # Install ansible
