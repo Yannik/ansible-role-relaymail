@@ -2,11 +2,6 @@
 language: python
 python: "2.7"
 
-addons:
-  apt:
-    packages:
-    - python-pip
-
 before_install:
  - sudo apt-get update -qq
  - sudo apt-get install python-apt python-pycurl
