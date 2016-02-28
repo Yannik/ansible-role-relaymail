@@ -17,7 +17,6 @@ galaxy_info:
     - utopic
     - vivid
     - wily
-    - xenial
   - name: Debian
     versions:
     - jessie
