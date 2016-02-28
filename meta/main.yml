@@ -33,3 +33,5 @@ galaxy_info:
     - relayhost
     - smarthost
     - mailrelay
+
+  dependencies: []
