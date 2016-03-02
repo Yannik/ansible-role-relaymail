@@ -53,7 +53,7 @@ Example Playbook
 
     - hosts: all
       roles:
-        - role: relaymail
+        - role: Yannik.relaymail
           relaymail_smtp_host: smtp.example.org
           relaymail_smtp_user: user@example.org
           relaymail_smtp_password: secret
