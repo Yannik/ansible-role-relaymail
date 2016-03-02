@@ -3,7 +3,27 @@ Description
 
 [![Build Status](https://travis-ci.org/Yannik/ansible-role-relaymail.svg?branch=master)](https://travis-ci.org/Yannik/ansible-role-relaymail)
 
-This role setups up a host so that it sends outgoing mails over a smarthost and optionally forwards email addressed to local system users.
+This role setups up a host so that it sends outgoing mails over a smarthost and optionally forwards email addressed to local system users. A secure alternative to ssmtp.
+
+Why shouldn't I use ssmtp, isn't it easier to setup?
+=========
+
+I actually believe that this role makes it even easier to setup postfix than ssmtp.
+
+This is what I found out when I installed ssmtp myself:
+
+>I wanted to use ssmtp today too, but noticed that it does NOT verify the SSL/TLS certificate of the remote server on the current debian & ubuntu releases and also does NOT verify the hostname of the certificate. This is a major issue, as this effectively renders the encryption useless and your password is being transmitted alike to being plaintext and anyone can sniff it. This has also been reported in a debian bug, but there has not been any progress for years: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=662960
+
+>The ssmtp version in the Redhat packages has been patched to atleast verify the certificate, but the hostname is still NOT being verified and the encryption is therefore as insecure as on debian/ubuntu. There is a bug for this, but there is also no progress for years: https://bugzilla.redhat.com/show_bug.cgi?id=864894
+
+>So, if you care about the security of the email account you use for your servers outgoing emails, do NOT use ssmtp.
+
+>ssmtp has had no active development since atleast 2009: https://anonscm.debian.org/gitweb/?p=ssmtp/ssmtp.git
+
+In addition to these points, any user that can send mails over ssmtp needs read-access to the ssmtp config file which includes the username and password used for smtp auth.
+In normal conditions, you would probably give read permission to 'other', which would mean that for every single user/service on that system could read your smtp credentials.
+
+This is not the case with the security-focused design of postfix.
 
 Requirements
 ------------
