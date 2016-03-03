@@ -25,6 +25,14 @@ In normal conditions, you would probably give read permission to 'other', which 
 
 This is not the case with the security-focused design of postfix.
 
+Test links:
+
+  * https://example.com
+  * <https://example.com>
+  * [https://example.com]
+  * [](https://example.com)
+  * [https://example.com](https://example.com)
+
 Requirements
 ------------
 
