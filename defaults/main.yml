@@ -5,3 +5,6 @@ relaymail_force_from_address: true
 # "local" overwrites the to address for emails addressed to local users
 # "none" 
 relaymail_overwrite_to: all
+
+# Set relay SMTP port to 25 by default
+relaymail_smtp_port: 25
