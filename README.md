@@ -37,6 +37,8 @@ Role Variables
 
 * `relaymail_smtp_host`: hostname of the smtp server used for relaying email
     * Example: `smtp.example.org`
+* `relaymail_smtp_port`: port of the smtp server used for relaying email (`25` by default)
+    * Example: `25`
 * `relaymail_smtp_user`: username to authenticate with at the relaying mailserver
     * Example: `user@example.org`
 * `relaymail_smtp_password`: password to authenticate with at the rayling mailserver
