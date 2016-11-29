@@ -1,7 +1,7 @@
 #{{ ansible_managed }}
 
 {% if relaymail_overwrite_to == "all" %}
-/.+@.+/ {{ overwrite_to_target }}
+/.+@.+/ {{ relaymail_overwrite_to_target }}
 {% elif relaymail_overwrite_to == "local" %}
 /.+@{{ ansible_fqdn | regex_escape }}/ {{ relaymail_overwrite_to_target }}
 /.+@{{ ansible_hostname | regex_escape}}/ {{ relaymail_overwrite_to_target }}
