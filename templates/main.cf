@@ -42,7 +42,7 @@ alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 
 {% else %}
-mydestination = 
+mydestination =
 local_transport = error:local delivery is disabled
 # and forward them using recipient_canonical_maps
 recipient_canonical_maps = regexp:/etc/postfix/recipient_canonical_maps
@@ -51,3 +51,8 @@ recipient_canonical_classes = envelope_recipient
 # rewrite the header recipient too
 #recipient_canonical_classes = envelope_recipient, header_recipient
 {% endif %}
+
+# Options added here will override previous settings.
+{% for key, value in relaymail_additional_options.items(): %}
+{{ key }} = {{value}}
+{% endfor %}

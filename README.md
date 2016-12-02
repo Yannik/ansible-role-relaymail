@@ -48,7 +48,12 @@ Role Variables
     * Default: `all`
 * `relaymail_overwrite_to_target`: email address which mails with overwritten to should be sent to (required when `relaymail_overwrite_to` is not `none`)
     * Example: `user2@example.org`
+* `relaymail_additional_options`: dictionary of key/value pairs to append to main.cf.
+    * Default: {}
 
+**Note:**  Options set using `relaymail_additional_options` will override previous settings.
+Per the postfix manual, _"When the same parameter is defined multiple times, only the last instance is remembered."_
+So while overrides are valid, postfix will generate a warning message.
 
 Example Playbook
 ----------------
@@ -61,7 +66,8 @@ Example Playbook
           relaymail_smtp_password: secret
           relaymail_overwrite_to: local
           relaymail_overwrite_to_target: user2@example.org
-
+          relaymail_additional_options:
+            smtp_tls_wrappermode: yes
 
 License
 -------
