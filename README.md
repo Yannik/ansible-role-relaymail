@@ -53,7 +53,7 @@ Role Variables
 
 **Note:**  Options set using `relaymail_additional_options` will override previous settings.
 Per the postfix manual, _"When the same parameter is defined multiple times, only the last instance is remembered."_
-So while overrides are valid, postfix will generate a warning message.
+So while overrides are valid, postfix will generate a warning message
 
 Example Playbook
 ----------------
@@ -67,7 +67,7 @@ Example Playbook
           relaymail_overwrite_to: local
           relaymail_overwrite_to_target: user2@example.org
           relaymail_additional_options:
-            smtp_tls_wrappermode: yes
+            smtp_tls_wrappermode: "yes"
 
 License
 -------

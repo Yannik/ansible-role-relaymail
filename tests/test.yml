@@ -10,4 +10,4 @@
       relaymail_overwrite_to: local
       relaymail_overwrite_to_target: user2@example.org
       relaymail_extra_options:
-        smtp_tls_wrappermode: yes
+        smtp_tls_wrappermode: "yes"
