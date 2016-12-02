@@ -9,3 +9,5 @@
       relaymail_smtp_password: secret
       relaymail_overwrite_to: local
       relaymail_overwrite_to_target: user2@example.org
+      relaymail_extra_options:
+        smtp_tls_wrappermode: "yes"
