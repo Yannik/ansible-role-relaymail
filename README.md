@@ -35,13 +35,13 @@ Ansible version 2.0 or greater is required for this role.
 Role Variables
 --------------
 
-* `relaymail_smtp_host`: hostname of the smtp server used for relaying email
+* `relaymail_smtp_host`: hostname of the smtp server used for relaying email (required)
     * Example: `smtp.example.org`
 * `relaymail_smtp_port`: port of the smtp server used for relaying email
     * Default: `25`
-* `relaymail_smtp_user`: username to authenticate with at the relaying mailserver
+* `relaymail_smtp_user`: username to authenticate with at the relaying mailserver (required)
     * Example: `user@example.org`
-* `relaymail_smtp_password`: password to authenticate with at the rayling mailserver
+* `relaymail_smtp_password`: password to authenticate with at the rayling mailserver (required)
 * `relaymail_force_from_address`: force the from address to be the `relaymail_smtp_user`
     * Default: `true`
 * `relaymail_overwrite_to`: `all` overwrites the to address for all emails, `local` overwrites the to address for emails addressed to local users, `none` does never overwrite the to address
