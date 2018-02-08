@@ -2,6 +2,11 @@
 language: python
 python: "2.7"
 
+env:
+  matrix:
+    - ANSIBLE_VERSION="2.3.3"
+    - ANSIBLE_VERSION="2.4.3"
+
 addons:
   apt:
     packages:
@@ -10,7 +15,7 @@ addons:
 
 install:
   # Install ansible
-  - pip install ansible
+  - pip install ansible=="$ANSIBLE_VERSION"
 
   # Check ansible version
   - ansible --version
