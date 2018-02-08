@@ -1,2 +1,2 @@
- - import_tasks: relaymail.yml
+ - include: relaymail.yml
    tags: relaymail
