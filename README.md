@@ -48,6 +48,9 @@ Role Variables
     * Default: `all`
 * `relaymail_overwrite_to_target`: email address which mails with overwritten to should be sent to (required when `relaymail_overwrite_to` is not `none`)
     * Example: `user2@example.org`
+* `relaymail_smtp_tls_security_level`: See http://www.postfix.org/postconf.5.html#smtp_tls_security_level
+    * Example: `dane-only`
+    * Default: `secure`
 * `relaymail_additional_options`: dictionary of key/value pairs to append to main.cf.
     * Default: {}
 
