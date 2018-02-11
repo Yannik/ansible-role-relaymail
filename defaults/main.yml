@@ -11,3 +11,5 @@ relaymail_smtp_port: 25
 
 # Add more options at end of main.cf
 relaymail_additional_options: {}
+
+relaymail_smtp_tls_security_level: secure
