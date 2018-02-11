@@ -39,10 +39,10 @@ Role Variables
     * Example: `smtp.example.org`
 * `relaymail_smtp_port`: port of the smtp server used for relaying email
     * Default: `25`
-* `relaymail_smtp_user`: username to authenticate with at the relaying mailserver (required)
+* `relaymail_smtp_user`: username to authenticate with at the relaying mailserver (optional)
     * Example: `user@example.org`
-* `relaymail_smtp_password`: password to authenticate with at the rayling mailserver (required)
-* `relaymail_force_from_address`: force the from address to be the `relaymail_smtp_user`
+* `relaymail_smtp_password`: password to authenticate with at the rayling mailserver (required if user is provided)
+* `relaymail_force_from_address`: force the from address to be the `relaymail_smtp_user` (you must specify a relaymail_smtp_user if true)
     * Default: `true`
 * `relaymail_overwrite_to`: `all` overwrites the to address for all emails, `local` overwrites the to address for emails addressed to local users, `none` does never overwrite the to address
     * Default: `all`
