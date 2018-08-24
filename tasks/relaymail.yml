@@ -1,3 +1,6 @@
+- name: Install package needed for SASL authentication
+  apt: name=libsasl2-modules state=present
+
 - name: Install postfix package
   apt: name=postfix state=present
  
