@@ -1,8 +1,8 @@
-- name: Install package needed for SASL authentication
-  apt: name=libsasl2-modules state=present
-
-- name: Install postfix package
-  apt: name=postfix state=present
+- name: Install required packages
+  apt: name={{ item }} state=present
+  with_items:
+    - postfix
+    - libsasl2-modules
  
 - name: Add postfix config files
   template: src={{ item }} dest=/etc/postfix/ owner=root group=root mode=644
