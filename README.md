@@ -30,7 +30,7 @@ Requirements
 
 This role works on all debian-based distributions and could easily be patched to work on any distribution which provides postfix.
 
-Ansible version 2.0 or greater is required for this role.
+Ansible version 2.4 or greater is required for this role.
 
 Role Variables
 --------------
