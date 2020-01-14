@@ -10,7 +10,6 @@
   template: src={{ item }} dest=/etc/postfix/ owner=root group=root mode=644
   with_items:
     - main.cf
-    - master.cf
     - recipient_canonical_maps
     - sender_canonical_maps
   notify: restart postfix
