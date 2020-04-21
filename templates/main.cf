@@ -53,6 +53,6 @@ recipient_canonical_classes = envelope_recipient
 {% endif %}
 
 # Options added here will override previous settings.
-{% for key, value in relaymail_additional_options.items(): %}
+{% for key, value in relaymail_additional_options.items() %}
 {{ key }} = {{value}}
 {% endfor %}

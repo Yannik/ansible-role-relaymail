@@ -1,14 +1,15 @@
+- name: Import OS family specific vars
+  include_vars: "vars/{{ ansible_os_family.lower() }}.yml"
+
 - name: Install required packages
-  apt: name={{ item }} state=present
-  with_items:
-    - postfix
-    - libsasl2-modules
- 
+  package:
+    state: present
+    name: "{{ relaymail_packages }}"
+
 - name: Add postfix config files
   template: src={{ item }} dest=/etc/postfix/ owner=root group=root mode=644
   with_items:
     - main.cf
-    - master.cf
     - recipient_canonical_maps
     - sender_canonical_maps
   notify: restart postfix
