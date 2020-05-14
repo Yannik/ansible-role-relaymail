@@ -42,8 +42,10 @@ Role Variables
 * `relaymail_smtp_user`: username to authenticate with at the relaying mailserver (required)
     * Example: `user@example.org`
 * `relaymail_smtp_password`: password to authenticate with at the rayling mailserver (required)
-* `relaymail_force_from_address`: force the from address to be the `relaymail_smtp_user`
+* `relaymail_force_from_address`: force the from address to `relaymail_smtp_user` or `relaymail_from_address` if it is defined
     * Default: `true`
+* `relaymail_from_address`: optional from address to be used by `relaymail_force_from_address` instead of `relaymail_smtp_user`
+    * Example: `user` or `user@example.com`
 * `relaymail_overwrite_to`: `all` overwrites the to address for all emails, `local` overwrites the to address for emails addressed to local users, `none` does never overwrite the to address
     * Default: `all`
 * `relaymail_overwrite_to_target`: email address which mails with overwritten to should be sent to (required when `relaymail_overwrite_to` is not `none`)
