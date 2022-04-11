@@ -1,3 +1,5 @@
 #{{ ansible_managed }}
 
+{% if relaymail_force_from_address %}
 /.+/    {{ relaymail_from_address|default(relaymail_smtp_user) }}
+{% endif %}

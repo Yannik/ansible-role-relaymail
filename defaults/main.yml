@@ -1,4 +1,4 @@
-# force the from address to be the {{ relaymail_smtp_user }}
+# force the from address to be {{ relaymail_from_address|default(relaymail_smtp_user) }}
 relaymail_force_from_address: true
 
 # "all" overwrites the to addresses for all users

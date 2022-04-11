@@ -14,9 +14,11 @@ inet_protocols = ipv4
 # default port 25 is fine, as smtp_tls_security_level does bounce an email if no tls is provided
 relayhost = [{{ relaymail_smtp_host }}]:{{ relaymail_smtp_port }}
 
+{% if relaymail_smtp_user is defined %}
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
+{% endif %}
 
 smtp_use_tls = yes
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
