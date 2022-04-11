@@ -6,8 +6,8 @@ relaymail_force_from_address: true
 # "none"
 relaymail_overwrite_to: all
 
-# Set relay SMTP port to 25 by default
-relaymail_smtp_port: 25
+# Set relay SMTP port to 587 by default
+relaymail_smtp_port: 587
 
 # Add more options at end of main.cf
 relaymail_additional_options: {}
