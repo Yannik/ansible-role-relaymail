@@ -53,6 +53,9 @@ Role Variables
 * `relaymail_smtp_tls_security_level`: See http://www.postfix.org/postconf.5.html#smtp_tls_security_level
     * Example: `dane-only`
     * Default: `secure`
+* `relaymail_smtp_tls_wrappermode`: Connect using explicit SSL/TLS mode (instead of STARTSSL). Required when submitting mail on port 465 (SMTPS).
+    * Example: `"yes"`
+    * Default: `"no"`
 * `relaymail_additional_options`: dictionary of key/value pairs to append to main.cf.
     * Default: {}
 

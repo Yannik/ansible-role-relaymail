@@ -21,6 +21,7 @@ smtp_sasl_security_options = noanonymous
 smtp_use_tls = yes
 smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 #smtp_tls_CApath
+smtp_tls_wrappermode = {{ relaymail_smtp_tls_wrappermode }}
 smtp_tls_security_level = {{ relaymail_smtp_tls_security_level }}
 smtp_tls_loglevel = 1
 smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache

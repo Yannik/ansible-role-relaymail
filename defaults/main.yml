@@ -13,3 +13,6 @@ relaymail_smtp_port: 587
 relaymail_additional_options: {}
 
 relaymail_smtp_tls_security_level: secure
+
+# make sure to wrap this in quotes because ansible converts yes/no to true/false
+relaymail_smtp_tls_wrappermode: "no"
