@@ -59,6 +59,9 @@ Role Variables
 * `relaymail_authorized_submit_users`: Only allow specified users to send mail (see http://www.postfix.org/postconf.5.html#authorized_submit_users)
     * Example: `root`
     * Default: `static:anyone`
+* `relaymail_restrict_port_25`: Restrict outbound traffic on port 25 to postfix user (via iptables).
+    * Example: `false`
+    * Default: `true`
 * `relaymail_additional_options`: dictionary of key/value pairs to append to main.cf.
     * Default: {}
 

@@ -23,3 +23,29 @@
 - name: postmap sasl hastable
   command: postmap /etc/postfix/sasl_passwd
   when: sasl_hash_results is changed
+
+- name: Add empty rc.local if it doesn't exist
+  copy:
+    src: rc.local
+    dest: /etc/rc.local
+    mode: 700
+    owner: root
+    group: root
+    force: no
+  when: relaymail_restrict_port_25
+
+- name: Create rc.local_ansible_relaymail file with iptables rules
+  copy:
+    src: rc.local_ansible_relaymail
+    dest: /etc/rc.local_ansible_relaymail
+    mode: 700
+    owner: root
+  when: relaymail_restrict_port_25
+
+- name: Ensure rc.local_ansible_relaymail file is included in rc.local
+  lineinfile:
+    dest: /etc/rc.local
+    line: "bash /etc/rc.local_ansible_relaymail"
+    insertbefore: "exit 0"
+    state: "{{ relaymail_restrict_port_25 | ternary('present', 'absent') }}"
+

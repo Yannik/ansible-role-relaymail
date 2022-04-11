@@ -18,3 +18,5 @@ relaymail_smtp_tls_security_level: secure
 relaymail_smtp_tls_wrappermode: "no"
 
 relaymail_authorized_submit_users: "static:anyone"
+
+relaymail_restrict_port_25: true
