@@ -41,6 +41,11 @@
     mode: 700
     owner: root
   when: relaymail_restrict_port_25
+  register: __relaymail_rc_local
+
+- name: Execute /etc/rc.local_ansible_relaymail once
+  shell: /etc/rc.local_ansible_relaymail
+  when: __relaymail_rc_local is changed
 
 - name: Ensure rc.local_ansible_relaymail file is included in rc.local
   lineinfile:
