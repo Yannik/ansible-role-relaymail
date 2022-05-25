@@ -37,7 +37,7 @@
   when: relaymail_restrict_port_25
 
 - name: Create rc.local_ansible_relaymail file with iptables rules
-  copy:
+  template:
     src: rc.local_ansible_relaymail
     dest: /etc/rc.local_ansible_relaymail
     mode: 700
@@ -45,7 +45,7 @@
   when: relaymail_restrict_port_25
   register: __relaymail_rc_local
 
-- name: Execute /etc/rc.local_ansible_relaymail once
+- name: Execute /etc/rc.local_ansible_relaymail if if has been changed
   shell: /etc/rc.local_ansible_relaymail
   when: __relaymail_rc_local is changed
 

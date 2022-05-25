@@ -60,6 +60,12 @@ recipient_canonical_classes = envelope_recipient
 #recipient_canonical_classes = envelope_recipient, header_recipient
 {% endif %}
 
+smtpd_relay_restrictions =
+{% if relaymail_enable_loopback_smtp %}
+    permit_mynetworks,
+{% endif %}
+    reject
+
 # Options added here will override previous settings.
 {% for key, value in relaymail_additional_options.items() %}
 {{ key }} = {{value}}

@@ -56,12 +56,18 @@ Role Variables
 * `relaymail_smtp_tls_wrappermode`: Connect using explicit SSL/TLS mode (instead of STARTSSL). Required when submitting mail on port 465 (SMTPS).
     * Example: `"yes"`
     * Default: `"no"`
-* `relaymail_authorized_submit_users`: Only allow specified users to send mail (see http://www.postfix.org/postconf.5.html#authorized_submit_users)
+* `relaymail_authorized_submit_users`: Only allow specified users to submit mail via sendmail command (see http://www.postfix.org/postconf.5.html#authorized_submit_users)
     * Example: `root`
     * Default: `static:anyone`
 * `relaymail_restrict_port_25`: Restrict outbound traffic on port 25 to postfix user (via iptables).
     * Example: `false`
     * Default: `true`
+* `relaymail_enable_loopback_smtp`: Enable smtpd on local port 2V for smtp-based mail submission
+  * Example: `true`
+  * Default: `false`
+* `relaymail_authorized_smtp_users`: Users allowed to submit mail via local smtp
+  * Example: `['keepalived']`
+  * Default: `[]`
 * `relaymail_additional_options`: dictionary of key/value pairs to append to main.cf.
     * Default: {}
 

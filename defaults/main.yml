@@ -17,6 +17,14 @@ relaymail_smtp_tls_security_level: secure
 # make sure to wrap this in quotes because ansible converts yes/no to true/false
 relaymail_smtp_tls_wrappermode: "no"
 
+# Only allow specified users to submit mail via sendmail command
 relaymail_authorized_submit_users: "static:anyone"
 
+# Restrict outbound traffic on port 25 to postfix user (via iptables).
 relaymail_restrict_port_25: true
+
+# Enable smtpd on local port 25 for smtp-based mail submission
+relaymail_enable_loopback_smtp: false
+
+# Users allowed to submit mail via local smtp
+relaymail_authorized_smtp_users: []
