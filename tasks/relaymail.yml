@@ -18,6 +18,7 @@
 - name: Add secret auth
   template: src=sasl_passwd dest=/etc/postfix owner=root group=root mode=600
   register: sasl_hash_results
+  when: relaymail_smtp_user is defined
   notify: restart postfix
 
 # lookup table type "regexp" doesn't need to be hashed according to "man postmap"
