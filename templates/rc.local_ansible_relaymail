@@ -8,8 +8,9 @@
 iptables-save |grep '\--comment ansible_relaymail' | sed 's/^-A/iptables -D/e'
 ip6tables-save |grep '\--comment ansible_relaymail' | sed 's/^-A/ip6tables -D/e'
 
+# NOTE: All iptables commands are in reverse order since we are using -I / INSERT!
+
 # only allow postfix to go out on port 25
-# reverse order since we are using -I / INSERT
 iptables -I OUTPUT -m tcp -p tcp --dport 25 -j REJECT --reject-with icmp-admin-prohibited -m comment --comment "ansible_relaymail"
 ip6tables -I OUTPUT -m tcp -p tcp --dport 25 -j REJECT --reject-with icmp6-adm-prohibited -m comment --comment "ansible_relaymail"
 iptables -I OUTPUT -m tcp -p tcp --dport 25 -m owner --uid-owner postfix -j ACCEPT -m comment --comment "ansible_relaymail"
