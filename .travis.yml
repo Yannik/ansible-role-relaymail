@@ -1,13 +1,12 @@
 ---
 dist: focal
 language: python
-python: "2.7"
 
 addons:
   apt:
     packages:
-    - python-pip
-    - python-apt
+    - python3-pip
+    - python3-apt
 
 install:
   # Install ansible
