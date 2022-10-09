@@ -1,5 +1,8 @@
 # force the from address to be {{ relaymail_from_address|default(relaymail_smtp_user) }}
-relaymail_force_from_address: true
+# "all" always overwrites the from address
+# "local" overwrites the from address for emails sent from local users
+# "none"
+relaymail_force_from_address: all
 
 # "all" overwrites the to addresses for all users
 # "local" overwrites the to address for emails addressed to local users
@@ -28,3 +31,6 @@ relaymail_enable_loopback_smtp: false
 
 # Users allowed to submit mail via local smtp
 relaymail_authorized_smtp_users: []
+
+# address used by `relaymail_force_from`
+relaymail_from_address: "{{ relaymail_smtp_user }}"

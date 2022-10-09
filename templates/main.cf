@@ -38,7 +38,7 @@ authorized_submit_users = {{ relaymail_authorized_submit_users }}
 
 # forces the envelope from to be set to a specific address
 # see https://serverfault.com/questions/147921/forcing-the-from-address-when-postfix-relays-over-smtp
-{% if relaymail_force_from_address %}
+{% if relaymail_force_from_address != "none" %}
 sender_canonical_maps = regexp:/etc/postfix/sender_canonical_maps
 {% endif %}
 
