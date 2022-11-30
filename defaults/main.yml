@@ -34,3 +34,6 @@ relaymail_authorized_smtp_users: []
 
 # address used by `relaymail_force_from`
 relaymail_from_address: "{{ relaymail_smtp_user }}"
+
+# postfix myhostname
+relaymail_myhostname: "{{ ansible_fqdn }}"
