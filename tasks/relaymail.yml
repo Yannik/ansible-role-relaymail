@@ -26,6 +26,11 @@
   command: postmap /etc/postfix/sasl_passwd
   when: sasl_hash_results is changed
 
+- name: Install iptables
+  apt:
+    pkg: iptables
+  when: relaymail_restrict_port_25
+
 - name: Add empty rc.local if it doesn't exist
   copy:
     src: rc.local
