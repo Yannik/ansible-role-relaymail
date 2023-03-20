@@ -37,3 +37,8 @@ relaymail_from_address: "{{ relaymail_smtp_user }}"
 
 # postfix myhostname
 relaymail_myhostname: "{{ ansible_fqdn }}"
+
+# many hosts point localhost to both an ipv4 and ipv6 loopback adress,
+# and ipv6 is usually prioritized over ipv4 (/etc/gai.conf)
+# therefore it is safer to listen on ipv4 and ipv6 by default
+relaymail_inet_protocols: all
