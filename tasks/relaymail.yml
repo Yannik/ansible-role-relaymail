@@ -3,8 +3,12 @@
 
 - name: Install required packages
   package:
-    state: present
     name: "{{ relaymail_packages }}"
+
+- name: Install rsyslog so that logs are written to /var/log/mail.log
+  package:
+    name: rsyslog
+  when: "ansible_os_family.lower() == 'debian'"
 
 - name: Add postfix config files
   template: src={{ item }} dest=/etc/postfix/ owner=root group=root mode=644

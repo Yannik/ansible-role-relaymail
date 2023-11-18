@@ -74,6 +74,9 @@ Role Variables
 * `relaymail_authorized_smtp_users`: Users allowed to submit mail via local smtp
   * Example: `['keepalived']`
   * Default: `[]`
+* `relaymail_install_rsyslog`: Installs rsyslog which is responsible for writing postfix log messages to /var/log/mail.log
+  * Example: `false`
+  * Default: `true`
 * `relaymail_additional_options`: dictionary of key/value pairs to append to main.cf.
     * Default: {}
 
