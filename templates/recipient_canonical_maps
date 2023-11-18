@@ -7,7 +7,7 @@
 /.+@{{ ansible_hostname | regex_escape}}/ {{ relaymail_overwrite_to_target }}
 /.+@localhost/ {{ relaymail_overwrite_to_target }}
 /.+@127.0.0.1/ {{ relaymail_overwrite_to_target }}
-{% for ip in ansible_all_ipv4_addresses + ansible_all_ipv6_addresses %}
+{% for ip in (ansible_all_ipv4_addresses + ansible_all_ipv6_addresses)|sort %}
 /.+@{{ ip }}/ {{ relaymail_overwrite_to_target }}
 {% endfor %}
 {% endif %}
