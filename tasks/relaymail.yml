@@ -22,6 +22,7 @@
 - name: Add secret auth
   template: src=sasl_passwd dest=/etc/postfix owner=root group=root mode=600
   register: sasl_hash_results
+  no_log: true
   when: relaymail_smtp_user is defined
   notify: restart postfix
 
