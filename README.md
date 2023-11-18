@@ -62,7 +62,7 @@ Role Variables
 * `relaymail_restrict_port_25`: Restrict outbound traffic on port 25 to postfix user (via iptables).
     * Example: `false`
     * Default: `true`
-* `relaymail_enable_loopback_smtp`: Enable smtpd on local port 2V for smtp-based mail submission
+* `relaymail_enable_smtpd`: Enable smtpd on port 25 for smtp-based mail submission
   * Example: `true`
   * Default: `false`
 * `relaymail_authorized_smtp_users`: Users allowed to submit mail via local smtp

@@ -27,7 +27,7 @@ relaymail_authorized_submit_users: "static:anyone"
 relaymail_restrict_port_25: true
 
 # Enable smtpd on local port 25 for smtp-based mail submission
-relaymail_enable_loopback_smtp: false
+relaymail_enable_smtpd: false
 
 # Users allowed to submit mail via local smtp
 relaymail_authorized_smtp_users: []

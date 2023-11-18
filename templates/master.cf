@@ -11,7 +11,7 @@
 # service type  private unpriv  chroot  wakeup  maxproc command + args
 #               (yes)   (yes)   (no)    (never) (100)
 # ==========================================================================
-{% if relaymail_enable_loopback_smtp %}
+{% if relaymail_enable_smtpd %}
 smtp      inet  n       -       y       -       -       smtpd
 {% endif %}
 #smtp      inet  n       -       y       -       1       postscreen

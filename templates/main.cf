@@ -61,7 +61,7 @@ recipient_canonical_classes = envelope_recipient
 {% endif %}
 
 smtpd_relay_restrictions =
-{% if relaymail_enable_loopback_smtp %}
+{% if relaymail_enable_smtpd %}
     permit_mynetworks,
 {% endif %}
     reject
