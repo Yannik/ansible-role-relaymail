@@ -42,3 +42,9 @@ relaymail_myhostname: "{{ ansible_fqdn }}"
 # and ipv6 is usually prioritized over ipv4 (/etc/gai.conf)
 # therefore it is safer to listen on ipv4 and ipv6 by default
 relaymail_inet_protocols: all
+
+# be careful about changing this, make sure you don't run an open relay
+# (note: senders are still restricted to `relaymail_mynetworks`, even with this set to `all`)
+relaymail_inet_interfaces: loopback-only
+
+relaymail_mynetworks: 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128

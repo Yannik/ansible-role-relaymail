@@ -6,8 +6,8 @@ append_dot_mydomain = no
 myhostname = {{ relaymail_myhostname }}
 myorigin = $myhostname
 
-mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
-inet_interfaces = loopback-only
+mynetworks = {{ relaymail_mynetworks }}
+inet_interfaces = {{ relaymail_inet_interfaces }}
 inet_protocols = {{ relaymail_inet_protocols }}
 
 # postfix < 3.0 requires an additional stunnel for SMTPS (instead of SMTP+STARTTLS)

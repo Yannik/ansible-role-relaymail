@@ -65,6 +65,12 @@ Role Variables
 * `relaymail_enable_smtpd`: Enable smtpd on port 25 for smtp-based mail submission
   * Example: `true`
   * Default: `false`
+* `relaymail_inet_interfaces`: Interfaces to listen on when smtpd is enabled
+  * Example: `all`
+  * Default: `loopback-only`
+* `relaymail_mynetworks`: Networks from which to accept and relay emails (only applicable when smtpd is enabled)
+  * Example: `127.0.0.0/8 172.30.0.0/16`
+  * Default: `127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128`
 * `relaymail_authorized_smtp_users`: Users allowed to submit mail via local smtp
   * Example: `['keepalived']`
   * Default: `[]`
